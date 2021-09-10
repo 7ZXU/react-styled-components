@@ -17,14 +17,14 @@ padding-right: 20px;
 
 `;
 
-function DocumentPage(){
+function CommunityPage(){
     return(
         <Body>
-            <Title>시작하기</Title>
+            <Title>Where To Get Support</Title>
             <Content/>
         </Body>
 
     )
 }
 
-export default DocumentPage;
+export default CommunityPage;

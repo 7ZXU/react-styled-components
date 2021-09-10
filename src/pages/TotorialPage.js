@@ -17,14 +17,14 @@ padding-right: 20px;
 
 `;
 
-function DocumentPage(){
+function TutorialPage(){
     return(
         <Body>
-            <Title>시작하기</Title>
+            <Title>자습서: React 시작하기</Title>
             <Content/>
         </Body>
 
     )
 }
 
-export default DocumentPage;
+export default TutorialPage;

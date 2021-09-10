@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import { Route, Switch } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import DocumentPage from "./pages/DocumentPage"
+import TutorialPage from "./pages/TotorialPage"
+import BlogPage from "./pages/BlogPage"
+import CommunityPage from "./pages/CommunityPage"
 
 const AppWrap = styled.div`
 position: absolute;
@@ -22,6 +25,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={MainPage}/>
         <Route exact path="/document" component={DocumentPage}/>
+        <Route exact path="/tutorial" component={TutorialPage}/>
+        <Route exact path="/blog" component={BlogPage}/>
+        <Route exact path="/community" component={CommunityPage}/>
         {/* <Main/>
         <Body>  
           <ScrollBar/>

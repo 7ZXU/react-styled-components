@@ -17,14 +17,14 @@ padding-right: 20px;
 
 `;
 
-function DocumentPage(){
+function BlogPage(){
     return(
         <Body>
-            <Title>시작하기</Title>
+            <Title>The Plan for React 18</Title>
             <Content/>
         </Body>
 
     )
 }
 
-export default DocumentPage;
+export default BlogPage;

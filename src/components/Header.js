@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from 'styled-components';
 import Logo from '../assets/logo192.png';
 import { Link } from "react-router-dom";
@@ -50,33 +50,105 @@ display: flex;
 justify-content: center;
 `;
 
+
 const MenuText = styled.div`
 padding-left: 15px;
 padding-right: 15px;
 font-weight: 300;
-font-color: white;
-
+font-size: 20px;
+color: white;
+outline: none;
+boarder: none;
 `;
 
+const DocMenu = styled(MenuText)`
+    color: ${props => props.color};
+`;
+
+const TutorialMenu = styled(MenuText)`
+    color: ${props => props.color};
+`;
+
+const BlogMenu = styled(MenuText)`
+    color: ${props => props.color};
+`;
+
+const ComMenu = styled(MenuText)`
+    color: ${props => props.color};
+`;
+
+
 function Header(){
+
+const [color1, setColor1] = useState("white");
+const [color2, setColor2] = useState("white");
+const [color3, setColor3] = useState("white");
+const [color4, setColor4] = useState("white");
+
 
 return(
     <Head>
 
         <Menu>
-            <IconWrap>
+            <Link to = "/">
+            <IconWrap onClick={
+                ()=>{
+                    setColor1("white");
+                    setColor2("white");
+                    setColor3("white");
+                    setColor4("white");
+                }
+            }>
                 <Icon src={Logo}/>
                 <Brand>React</Brand>
             </IconWrap>
+            </Link>
             
-
             <Nav/>
-                <Link to = "/documnet">
-                    <MenuText>문서</MenuText>
+                <Link to = "/document">
+                            <DocMenu color = {color1} onClick={
+                                ()=>{
+                                    setColor1("cyan");
+                                    setColor2("white");
+                                    setColor3("white");
+                                    setColor4("white");
+                                }
+                                
+                                }>문서</DocMenu>
                 </Link>
-                <MenuText>자습서</MenuText>
-                <MenuText>블로그</MenuText>
-                <MenuText>커뮤니티</MenuText>
+                
+                <Link to = "/tutorial">
+                            <TutorialMenu color = {color2} onClick={
+                                ()=>{
+                                    setColor1("white");
+                                    setColor2("cyan");
+                                    setColor3("white");
+                                    setColor4("white");
+                                }                                
+                                }>자습서</TutorialMenu>
+                </Link>
+
+                <Link to = "/blog">
+                            <BlogMenu color = {color3} onClick={
+                                ()=>{
+                                    setColor1("white");
+                                    setColor2("white");
+                                    setColor3("cyan");
+                                    setColor4("white");
+                                } 
+                            }>블로그</BlogMenu>
+                </Link>
+                
+                <Link to = "/community">
+                            <ComMenu color = {color4} onClick={
+                                ()=>{
+                                    setColor1("white");
+                                    setColor2("white");
+                                    setColor3("white");
+                                    setColor4("cyan");
+                                }
+                            }>커뮤니티</ComMenu>
+                </Link>
         </Menu>
     </Head>
 )
