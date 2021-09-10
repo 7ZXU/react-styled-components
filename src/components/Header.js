@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import Logo from '../assets/logo192.png';
+import { Link } from "react-router-dom";
 
 const Head = styled.div`
 background-color: #20232a;
@@ -70,7 +71,9 @@ return(
             
 
             <Nav/>
-                <MenuText>문서</MenuText>
+                <Link to = "/documnet">
+                    <MenuText>문서</MenuText>
+                </Link>
                 <MenuText>자습서</MenuText>
                 <MenuText>블로그</MenuText>
                 <MenuText>커뮤니티</MenuText>
