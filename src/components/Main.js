@@ -9,7 +9,7 @@ flex-direction: column;
 background-image: url(${(props) => props.bg});
 background-size: cover;
 color: #ffffff;
-width: 100%;
+height: 100%;
 padding-bottom: 10px;
 align-items : center;
 justify-content: center;

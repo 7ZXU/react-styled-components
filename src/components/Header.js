@@ -80,11 +80,7 @@ const ComMenu = styled(MenuText)`
 
 function Header(){
 
-const [color1, setColor1] = useState("white");
-const [color2, setColor2] = useState("white");
-const [color3, setColor3] = useState("white");
-const [color4, setColor4] = useState("white");
-
+const [index, setIndex] = useState(1);
 
 return(
     <Head>
@@ -92,12 +88,7 @@ return(
         <Menu>
             <Link to = "/">
             <IconWrap onClick={
-                ()=>{
-                    setColor1("white");
-                    setColor2("white");
-                    setColor3("white");
-                    setColor4("white");
-                }
+                    ()=>{setIndex(0)}   
             }>
                 <Icon src={Logo}/>
                 <Brand>React</Brand>
@@ -106,47 +97,26 @@ return(
             
             <Nav/>
                 <Link to = "/document">
-                            <DocMenu color = {color1} onClick={
-                                ()=>{
-                                    setColor1("cyan");
-                                    setColor2("white");
-                                    setColor3("white");
-                                    setColor4("white");
-                                }
-                                
+                            <DocMenu color = {index===1? "cyan": "white"} onClick={
+                                    ()=>{setIndex(1)}                                
                                 }>문서</DocMenu>
                 </Link>
                 
                 <Link to = "/tutorial">
-                            <TutorialMenu color = {color2} onClick={
-                                ()=>{
-                                    setColor1("white");
-                                    setColor2("cyan");
-                                    setColor3("white");
-                                    setColor4("white");
-                                }                                
+                            <TutorialMenu color = {index===2? "cyan": "white"} onClick={
+                                ()=>{setIndex(2)}                                
                                 }>자습서</TutorialMenu>
                 </Link>
 
                 <Link to = "/blog">
-                            <BlogMenu color = {color3} onClick={
-                                ()=>{
-                                    setColor1("white");
-                                    setColor2("white");
-                                    setColor3("cyan");
-                                    setColor4("white");
-                                } 
+                            <BlogMenu color = {index===3? "cyan": "white"}  onClick={
+                              ()=>{setIndex(3)}
                             }>블로그</BlogMenu>
                 </Link>
                 
                 <Link to = "/community">
-                            <ComMenu color = {color4} onClick={
-                                ()=>{
-                                    setColor1("white");
-                                    setColor2("white");
-                                    setColor3("white");
-                                    setColor4("cyan");
-                                }
+                            <ComMenu color = {index===4? "cyan": "white"}  onClick={
+                                ()=>{setIndex(4)}
                             }>커뮤니티</ComMenu>
                 </Link>
         </Menu>

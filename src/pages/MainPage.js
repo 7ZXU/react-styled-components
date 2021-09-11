@@ -6,36 +6,45 @@ import ScrollBar from "../components/ScrollBar";
 import Editor from "../components/Editor";
 
 const Body = styled.div`
-display: flex;
-flex-direction: column;
-justify-direction: center;
-font-family: 'Spoqa Han Sans Neo';
-align-items: center;
-width: 90%;
-padding-left: 20px;
-padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-direction: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
 
 `;
 
 const ContentWrap = styled.div`
-display: flex;
-flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
-@media screen and (max-width: 778px){
-  flex-direction: column;
-  align-items: center;
-}
+    @media screen and (max-width: 778px){
+    flex-direction: column;
+    align-items: center;
+    }
 
 `;
 
 const Line = styled.hr`
 
-width: 100%;
-color: rgb(236, 236, 236);
-border-top: none;
-border-left: none;
-border-right: none;
+    width: 90%;
+    color: rgb(236, 236, 236);
+    border-top: none;
+    border-left: none;
+    border-right: none;
 
+`;
+
+const ScrollWrap = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 778px) {
+        justify-content: flex-start;
+    }
 
 `;
 
@@ -45,19 +54,22 @@ function MainPage() {
   return (
     <div>
         <Main/>
-        <Body>  
-        <ScrollBar/>
-        <Line/>
 
-        <ContentWrap>
-            <Content/>
-            <Editor/>
-        </ContentWrap>
+        <ScrollWrap> 
+            <ScrollBar/>
+        </ScrollWrap> 
 
-        <ContentWrap>
-            <Content/>
-            <Editor/>
-        </ContentWrap>
+        <Body>
+            <Line/> 
+            <ContentWrap>
+                <Content/>
+                <Editor/>
+            </ContentWrap>
+
+            <ContentWrap>
+                <Content/>
+                <Editor/>
+            </ContentWrap>
 
         </Body>
     </div>

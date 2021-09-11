@@ -3,23 +3,19 @@ import styled from 'styled-components';
 
 const ScrollBarWrap = styled.div`
 
-@media screen and (min-width: 778px){
-
 display: flex;
 flex-direction: row;
-height: 200px;
 margin-top: 60px;
 margin-bottom: 65px;
 position: relative;
-
-}
+height: 200px;
+width: 90%;
 
 
 @media screen and (max-width: 778px){
-    display: flex;
-    flex-direction: row;
     overflow-x: scroll;
-
+    width: 1200px;
+    white-space: nowrap;
 }
 
 `;
@@ -27,7 +23,6 @@ position: relative;
 const ScrollItem = styled.div`
 
 vertical-align: top;
-white-space: normal;
 width: 100%;
 padding: 0px 20px;
 
@@ -36,6 +31,7 @@ padding: 0px 20px;
 function ScrollBar(){
 
     return (
+        
     <ScrollBarWrap>
         <ScrollItem>
         <h3>선언형</h3>
