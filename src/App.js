@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import { Route, Switch } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import DocumentPage from "./pages/DocumentPage"
-import TutorialPage from "./pages/TotorialPage"
+import TutorialPage from "./pages/TutorialPage"
 import BlogPage from "./pages/BlogPage"
 import CommunityPage from "./pages/CommunityPage"
 
